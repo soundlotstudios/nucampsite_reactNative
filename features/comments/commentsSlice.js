@@ -9,18 +9,18 @@ export const fetchComments = createAsyncThunk(
   }
 );
 
-export const postComment = createAsyncThunk(
-  "comments/postComment",
-  async (payload, { dispatch, getState }) => {
-    setTimeout(() => {
-      const { comments } = getState();
-      payload.date = new Date().toISOString();
-      payload.id = comments.commentsArray.length;
-      // console.log("Payload", payload);
-      dispatch(addComment(payload));
-    }, 2000);
-  }
-);
+// export const postComment = createAsyncThunk(
+//   "comments/postComment",
+//   async (payload, { dispatch, getState }) => {
+//     setTimeout(() => {
+//       const { comments } = getState();
+//       payload.date = new Date().toISOString();
+//       payload.id = comments.commentsArray.length;
+//       // console.log("Payload", payload);
+//       dispatch(addComment(payload));
+//     }, 2000);
+//   }
+// );
 
 const commentsSlice = createSlice({
   name: "comments",
